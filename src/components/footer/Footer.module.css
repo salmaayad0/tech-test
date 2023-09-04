@@ -1,0 +1,8 @@
+.menu span{
+    cursor: pointer;
+    transition: all 1ms ease-in-out;
+}
+
+.menu span:hover{
+    color: rgba(0, 0, 0, 0.7);
+}

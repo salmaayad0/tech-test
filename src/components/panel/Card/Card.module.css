@@ -1,0 +1,43 @@
+.space{
+    height: 7.5rem;
+    width: 13rem;
+    border: 0.5px solid rgba(85, 88, 92, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(68, 76, 92, 0.5);
+    background: linear-gradient(6deg, rgba(249,246,246,1) 5%, rgba(175,181,207,0.2) 100%);
+    transition: all 1ms ease-in-out;
+}
+
+.space:hover{
+    scale: 1.025;
+    cursor: pointer;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255, 0.0)0%,
+        rgba(136,160,255, 0.46)217.91%
+    );
+    box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.021);
+}
+  
+.countUp{
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--lightBlue);
+}
+.countUp:nth-child(2){
+    font-size: 1.4rem;
+}
+
+.text{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.text:last-child{
+    color: var(--lightBlue);
+}
+
+
+
