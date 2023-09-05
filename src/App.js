@@ -14,7 +14,7 @@ import UpdatePost from './components/panel/posts/UpdatePost';
 import AddComment from './components/panel/comments/AddComment';
 import AllComments from './components/panel/comments/AllComments';
 import UpdateComment from './components/panel/comments/UpdateComment';
-
+import RequirAuth from './components/auth/RequirAuth';
 
 const Landing = React.lazy(_ => import('./pages/Landing'));
 const Panel = React.lazy(_ => import('./pages/Panel'));
@@ -29,7 +29,7 @@ function App() {
   },[])
   
   return (
-    <div>
+    <>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route 
@@ -40,6 +40,7 @@ function App() {
             </React.Suspense>} 
           />
 
+          <Route element={<RequirAuth />} >
           <Route 
           path='panel' 
           element={ 
@@ -57,10 +58,16 @@ function App() {
               <Route path='update/:commentId' element={<UpdateComment />} />
             </Route>
           </Route>
+
           </Route>
+
+         
+
+          </Route>
+          
         <Route path='*' element={<Notfound />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

@@ -19,7 +19,7 @@ const Option = () => {
 
   return (
     <section className="m-3">
-      <div className={`row d-flex justify-content-around ` + style.contain}>
+      <div className={`row d-flex justify-content-center ` + style.contain}>
         <Select data={shownData[0]} />
         <Select data={shownData[1]} />
       </div>

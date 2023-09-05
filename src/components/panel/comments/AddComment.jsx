@@ -11,22 +11,6 @@ const AddComment = () => {
     const dispatch = useDispatch();
     const { loading, error } = useSelector(state => state.commentsSlice);
 
-    const handlePostId = (e) => {
-        setPostId(e.target.value);
-      };
-    
-      const handleName = (e) => {
-        setName(e.target.value);
-      };
-    
-      const handleBody = (e) => {
-        setBody(e.target.value);
-      };
-
-      const handleEmail = (e) => {
-        setEmail(e.target.value);
-      };
-    
       const clearForm =_=>{
         setEmail('');
         setName('');
@@ -53,7 +37,7 @@ const AddComment = () => {
             aria-describedby="postId"
             placeholder="Enter post id"
             value={postId}
-            onChange={(e) => handlePostId(e)}
+            onChange={(e) => setPostId(e.target.value)}
             required
           />
         </div>
@@ -67,7 +51,7 @@ const AddComment = () => {
             aria-describedby="name"
             placeholder="Enter your name"
             value={name}
-            onChange={(e) => handleName(e)}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -81,7 +65,7 @@ const AddComment = () => {
             aria-describedby="body"
             placeholder="Enter post content"
             value={body}
-            onChange={(e) => handleBody(e)}
+            onChange={(e) => setBody(e.target.value)}
             required
           />
         </div>
@@ -95,7 +79,7 @@ const AddComment = () => {
             aria-describedby="email"
             placeholder="Enter your email"
             value={email}
-            onChange={(e) => handleEmail(e)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>

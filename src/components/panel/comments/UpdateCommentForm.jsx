@@ -15,22 +15,6 @@ const UpdateCommentForm = (props) => {
     const dispatch = useDispatch();
     const { loading, error } = useSelector(state => state.commentsSlice);
 
-    const handlePostId = (e) => {
-        setPostId(e.target.value);
-      };
-    
-      const handleName = (e) => {
-        setName(e.target.value);
-      };
-    
-      const handleBody = (e) => {
-        setBody(e.target.value);
-      };
-
-      const handleEmail = (e) => {
-        setEmail(e.target.value);
-      };
-    
       const clearForm =_=>{
         setEmail('');
         setName('');
@@ -54,7 +38,7 @@ const UpdateCommentForm = (props) => {
             aria-describedby="postId"
             placeholder="Enter post id"
             value={postId}
-            onChange={(e) => handlePostId(e)}
+            onChange={(e) => setPostId(e.target.value)}
             required
           />
         </div>
@@ -68,7 +52,7 @@ const UpdateCommentForm = (props) => {
             aria-describedby="name"
             placeholder="Enter your name"
             value={name}
-            onChange={(e) => handleName(e)}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -82,13 +66,13 @@ const UpdateCommentForm = (props) => {
             aria-describedby="body"
             placeholder="Enter post content"
             value={body}
-            onChange={(e) => handleBody(e)}
+            onChange={(e) => setBody(e.target.value)}
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Update your comment</label>
+          <label htmlFor="email">Update your E-mail</label>
           <input
             type="email"
             className="form-control"
@@ -96,7 +80,7 @@ const UpdateCommentForm = (props) => {
             aria-describedby="email"
             placeholder="Enter your email"
             value={email}
-            onChange={(e) => handleEmail(e)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>

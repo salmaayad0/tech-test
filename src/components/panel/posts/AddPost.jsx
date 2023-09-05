@@ -11,18 +11,6 @@ const AddPost = () => {
 
   const { loading, error } = useSelector(state => state.postsSlice)
 
-  const handleUserId = (e) => {
-    setUserId(e.target.value);
-  };
-
-  const handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleBody = (e) => {
-    setBody(e.target.value);
-  };
-
   const clearForm =_=>{
     setUserId(0);
     setTitle('');
@@ -48,7 +36,7 @@ const AddPost = () => {
             aria-describedby="userId"
             placeholder="Enter user id"
             value={userId}
-            onChange={(e) => handleUserId(e)}
+            onChange={(e) => setUserId(e.target.value)}
             required
           />
         </div>
@@ -62,7 +50,7 @@ const AddPost = () => {
             aria-describedby="title"
             placeholder="Enter post hook"
             value={title}
-            onChange={(e) => handleTitle(e)}
+            onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
@@ -76,7 +64,7 @@ const AddPost = () => {
             aria-describedby="body"
             placeholder="Enter post content"
             value={body}
-            onChange={(e) => handleBody(e)}
+            onChange={(e) => setBody(e.target.value)}
             required
           />
         </div>
