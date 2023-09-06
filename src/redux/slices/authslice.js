@@ -5,13 +5,12 @@ import { auth } from '../../firebase/firebaseConfig';
 const initialState = {
     loading: false,
     error: '',
-    userAuth: false
+    userAuth: null
 }
 
 export const login = createAsyncThunk('login', async ({email, pwd}, thunk) => {
     const { rejectWithValue } = thunk;
-    try {
-        await signInWithEmailAndPassword(auth, email, pwd)
+    try { await signInWithEmailAndPassword(auth, email, pwd)
     //    .then(userCredential => {
     //      console.log(userCredential);
     //   })
@@ -43,9 +42,9 @@ export const authslice = createSlice({
             state.error = "";
         })
 
-        builder.addCase(login.fulfilled, state => {
+        builder.addCase(login.fulfilled, (state, action) => {
             state.loading = false;
-            state.userAuth = true;
+            state.userAuth = auth;
         })
 
         builder.addCase(login.rejected, (state, action) => {

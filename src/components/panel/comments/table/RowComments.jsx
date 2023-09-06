@@ -2,19 +2,33 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
-import { deleteComment, oneComment } from '../../../../redux/slices/comments';
+import { deleteComment } from '../../../../redux/slices/comments';
+import Swal from 'sweetalert2';
 
 const RowComments = (props) => {
     const { id, postId, name, email, body } = props.comment;
 
     const dispatch = useDispatch();
 
-    const handleUpdate = () =>{
-        dispatch(oneComment(id))
-      }
-    
       const handleDelete = () => {
-        dispatch(deleteComment(id));
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            dispatch(deleteComment(id));
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
       }
     
   return (
@@ -27,7 +41,6 @@ const RowComments = (props) => {
         <Link 
             to={`/panel/comments/update/${id}`}
             className="btn btn-info btn-sm"
-            onClick={handleUpdate}
         >
               Update
         </Link>

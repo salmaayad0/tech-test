@@ -4,21 +4,22 @@ import AuthCheck from "../auth/AuthCheck";
 
 const DropDown = () => {
   return (
-    <div className="dropdown">
-      <button
-        className="btn dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <FaUserAlt size={17} />
-      </button>
-      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <AuthCheck />
-      </div>
-    </div>
+    <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href=""
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <FaUserAlt size={15} />
+            </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <AuthCheck />
+            </div>
+          </li>
   );
 };
 

@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updatePost } from "../../../redux/slices/posts";
-import { useParams } from "react-router-dom";
 
 const UpdateForm = (props) => {
-  const { postId } = useParams();
   const post = props.post;
+  const { id } = props.post;
+  const error = props.error;
+  const loading = props.loading;
 
   const [userId, setUserId] = useState(post.userId);
   const [title, setTitle] = useState(post.title);
   const [body, setBody] = useState(post.body);
 
   const dispatch = useDispatch();
-
-  const { loading, error } = useSelector((state) => state.postsSlice);
 
   const clearForm = () => {
     setUserId(0);
@@ -23,9 +22,11 @@ const UpdateForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updatePost({id: postId, obj: {userId, title, body} }));
+    dispatch(updatePost({id, obj: {userId, title, body} }));
     clearForm();
   };
+
+
   return (
     <form className="mx-5" onSubmit={(e) => handleSubmit(e)}>
       <div className="htmlForm-group">

@@ -12,7 +12,7 @@ const Select = (props) => {
             <h3 className="text-primary">All {name}</h3>
             <h6 className="text-primary position-relative">
               Your app has{" "}
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-light">
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-light">
                 {num}
               </span>
             </h6>

@@ -1,8 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import UpdateCommentForm from './UpdateCommentForm';
+import { oneComment } from '../../../redux/slices/comments';
+import { useParams } from 'react-router-dom';
 
 const UpdateComment = () => {
+  const { commentId } = useParams();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => { dispatch(oneComment(commentId)) },[])
+
   const { loading, error, comment } = useSelector(state => state.commentsSlice );
 
   return (
@@ -19,7 +27,7 @@ const UpdateComment = () => {
           <span className="visually-hidden"></span>
         </div>
       </div>
-    ) : ( <UpdateCommentForm comment={comment} />  )}
+    ) : ( <UpdateCommentForm comment={comment} error={error} loading={loading} />  )}
     </div>
   )
 }

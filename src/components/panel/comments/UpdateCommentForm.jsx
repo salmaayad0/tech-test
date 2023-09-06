@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { updateComment } from "../../../redux/slices/comments";
 
 const UpdateCommentForm = (props) => {
-  const { commentId } = useParams();
   const comment = props.comment;
+  const { id } =props.comment;
+  const error = props.error;
+  const loading = props.loading;
 
   const [postId, setPostId] = useState(comment.postId);
   const [name, setName] = useState(comment.name);
   const [body, setBody] = useState(comment.body);
-    const [email, setEmail] = useState(comment.email);
+  const [email, setEmail] = useState(comment.email);
 
-    const dispatch = useDispatch();
-    const { loading, error } = useSelector(state => state.commentsSlice);
+  const dispatch = useDispatch();
+    
 
       const clearForm =_=>{
         setEmail('');
@@ -24,7 +25,7 @@ const UpdateCommentForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateComment({id: commentId, obj: {postId, name, email, body} }));
+    dispatch(updateComment({id, obj: {postId, name, email, body} }));
     clearForm();
   };
   return (

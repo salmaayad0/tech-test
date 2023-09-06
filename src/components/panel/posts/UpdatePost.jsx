@@ -1,10 +1,17 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import UpdateForm from './UpdateForm';
+import { useParams } from 'react-router-dom';
+import { onePost } from '../../../redux/slices/posts';
 
 const UpdatePost = () => {
+  const { postId } = useParams();
 
-    const { loading, error, post } = useSelector(state => state.postsSlice)
+  const dispatch = useDispatch();
+
+  useEffect(() => { dispatch(onePost(postId)) },[])
+
+  const { loading, error, post } = useSelector(state => state.postsSlice )
 
   return (
     <div style={{ width: "43.75rem" }}>
@@ -20,7 +27,9 @@ const UpdatePost = () => {
           <span className="visually-hidden"></span>
         </div>
       </div>
-    ) : ( <UpdateForm post={post} /> )}
+    ) : ( 
+    <UpdateForm post={post}  error={error} loading={loading} />
+     )}
     </div>
   )
 }

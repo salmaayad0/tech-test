@@ -123,6 +123,7 @@ export const postsSlice = createSlice({
         builder.addCase(updatePost.fulfilled, (state, action) => {
             state.loading = false;
             state.post = action.payload;
+            console.log(state.post);
         })
 
         builder.addCase(updatePost.rejected, (state, action) => {

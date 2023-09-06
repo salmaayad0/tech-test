@@ -31,7 +31,7 @@ const Login = () => {
             type="email"
             id="email"
             name="user"
-            className="form-control"
+            className="form-control form-control-sm"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
@@ -41,7 +41,7 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input
             type="password"
-            className="form-control"
+            className="form-control form-control-sm"
             id="password"
             name="pwd"
             onChange={(e) => setPwd(e.target.value)}
