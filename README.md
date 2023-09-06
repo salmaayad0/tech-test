@@ -1,8 +1,57 @@
-# Getting Started with Create React App
 
+# Shelter company tech test
+
+this is a TECHNICAL TASK REQUIREMENTS FOR
+FRONT END DEVELOPER 
+
+
+# Table of contents
+
+- [Project Title](#Shelter-company-tech-test)
+- [Table of contents](#table-of-contents)
+- [Installation](#installation)
+- [Development](#development)
+- [Features](#Features)
+- [Available Scripts](#Available-Scripts)
+
+
+
+## Installation
+[(Back to top)](#table-of-contents)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To get started first type
+### `npm install` 
+### `npm start`
+
+# Development
+[(Back to top)](#table-of-contents)
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+# Features
+[(Back to top)](#table-of-contents)
+
+this test can 
+- view posts and comments from (https://jsonplaceholder.typicode.com/) in the landing page
+- login in with firebase authentication "try to login with (test@shelter.com) and password (123456) to test
+- protected route "panel" for logged in only
+- CRUD operation for both comments and posts
+-  generic service that makes HTTP requests using Redux toolkit
+- lazy loading
+- responsive components
+
+*in the future *
+- add more interactive ui/ux design
+- handle error cases 
+- add registiration page
+
+
+# Available Scripts
 
 In the project directory, you can run:
 
@@ -38,33 +87,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
